@@ -1,8 +1,9 @@
-![Python](https://img.shields.io/badge/Python-3.10+-blue?style=for-the-badge&logo=python)
-![TensorFlow](https://img.shields.io/badge/TensorFlow-DeepLearning-orange?style=for-the-badge&logo=tensorflow)
-![Keras](https://img.shields.io/badge/Keras-NeuralNetwork-red?style=for-the-badge&logo=keras)
-![Flask](https://img.shields.io/badge/Flask-WebApp-black?style=for-the-badge&logo=flask)
-![CNN](https://img.shields.io/badge/Model-CNN-green?style=for-the-badge)
+![Python](https://img.shields.io/badge/Python-3.10+-blue)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-2.21-orange)
+![CNN](https://img.shields.io/badge/Model-CNN-green)
+![ResNet](https://img.shields.io/badge/ResNet-50-blueviolet)
+![MobileNet](https://img.shields.io/badge/MobileNet-V2-yellow)
+![Flask](https://img.shields.io/badge/Flask-WebApp-black)
 
 # Vegetable Classification System
 
