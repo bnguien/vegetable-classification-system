@@ -1,0 +1,19 @@
+# Crawl output
+dataset/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environment
+env/
+.venv/
+venv/
+
+# IDE settings
+.vscode/
+
+# Logs
+*.log
