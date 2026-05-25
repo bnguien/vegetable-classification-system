@@ -449,7 +449,7 @@ export default function Home() {
                       margin: '0',
                       fontWeight: '500'
                     }}>
-                      {isEnglish 
+                      {isEnglish
                         ? "Asparagus, Banana, Broccoli, Carrot, Corn, Eggplant, Orange, Pineapple, Potato, Tomato"
                         : "Măng tây, Chuối, Bông cải xanh, Cà rốt, Bắp, Cà tím, Cam, Dứa, Khoai tây, Cà chua"
                       }
@@ -465,9 +465,6 @@ export default function Home() {
       )}
 
       <footer className="footer-container">
-        <div className="footer-logo">
-          Vegetable Classification
-        </div>
         <div className="footer-copyright">
           © 2026 KHDL.
         </div>
