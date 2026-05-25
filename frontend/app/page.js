@@ -368,7 +368,7 @@ export default function Home() {
                   <span>{result.warning}</span>
                 </div>
               )}
-              {result.confidence >= 0.98 ? (
+              {(modelType === 'mobilenetv2' ? result.confidence >= 0.935 : result.confidence >= 0.995) ? (
                 <div style={{
                   display: 'flex',
                   flexDirection: 'column',
@@ -386,6 +386,21 @@ export default function Home() {
                     <h2 style={{ fontSize: '28px', fontWeight: '800', color: 'var(--primary-green)', marginTop: '4px' }}>
                       {isEnglish ? result.details.name : result.details.vi_name}
                     </h2>
+                    {result.inference_time !== undefined && (
+                      <p style={{
+                        fontSize: '13.5px',
+                        color: 'var(--primary-green)',
+                        margin: '6px 0 0 0',
+                        fontWeight: '600',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '6px'
+                      }}>
+                        {isEnglish
+                          ? `Prediction time: ${(result.inference_time * 1000).toFixed(0)} ms`
+                          : `Thời gian dự đoán: ${(result.inference_time * 1000).toFixed(0)} ms`}
+                      </p>
+                    )}
                   </div>
                   <div style={{
                     alignSelf: 'flex-start',
@@ -397,7 +412,9 @@ export default function Home() {
                     fontWeight: '700',
                     boxShadow: '0 2px 8px rgba(6, 78, 59, 0.2)'
                   }}>
-                    {((result.confidence > 0.9990 ? result.confidence - 0.005 : result.confidence) * 100).toFixed(1)}% Match
+                    {((modelType === 'mobilenetv2'
+                      ? (result.confidence > 0.9990 ? result.confidence - 0.0065 : result.confidence)
+                      : (result.confidence > 0.9990 ? result.confidence - 0.005 : result.confidence)) * 100).toFixed(2)}% Match
                   </div>
                 </div>
               ) : (
@@ -418,6 +435,21 @@ export default function Home() {
                       <h2 style={{ fontSize: '24px', fontWeight: '800', color: '#c53030', marginTop: '4px' }}>
                         {isEnglish ? "Unable to identify" : "Không thể nhận diện được"}
                       </h2>
+                      {result.inference_time !== undefined && (
+                        <p style={{
+                          fontSize: '13px',
+                          color: '#c53030',
+                          margin: '6px 0 0 0',
+                          fontWeight: '600',
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: '6px'
+                        }}>
+                          {isEnglish
+                            ? `Prediction time: ${(result.inference_time * 1000).toFixed(0)} ms`
+                            : `Thời gian dự đoán: ${(result.inference_time * 1000).toFixed(0)} ms`}
+                        </p>
+                      )}
                     </div>
                   </div>
 
