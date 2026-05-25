@@ -2,70 +2,83 @@
 ![TensorFlow](https://img.shields.io/badge/TensorFlow-2.21-orange)
 ![CNN](https://img.shields.io/badge/Model-CNN-green)
 ![ResNet](https://img.shields.io/badge/ResNet-50-blueviolet)
-![MobileNet](https://img.shields.io/badge/MobileNet-V2-yellow)
-![Flask](https://img.shields.io/badge/Flask-WebApp-black)
+![Next.js](https://img.shields.io/badge/Next.js-15.0-black)
+![Flask](https://img.shields.io/badge/Flask-API-black)
 
-# Vegetable Classification System
+# Vegetable & Fruit Classification System
 
-A lightweight web application that uses deep learning to classify vegetables and fruits from images. The project uses Flask for the web interface and TensorFlow/Keras for model inference, and it is organized to make it easy to add new models or datasets.
+A premium web application that uses deep learning to classify vegetables and fruits from images. The project uses a **Flask API backend** to run inference on a trained ResNet50 model and a modern **Next.js frontend** for a stunning, bilingual (Vietnamese/English), and highly interactive user experience.
 
-Key features
-- Upload an image and receive a predicted label
-- Supports common CNN architectures (e.g., ResNet, MobileNet)
-- Simple, user-friendly web interface
+---
 
-Tech stack
-- Python 3.8+
-- TensorFlow / Keras
-- Flask
+## 🌟 Key Features
+- **Instant Classification**: Upload an image and receive predicted label with high-speed inference.
+- **ResNet50 Model**: High accuracy trained on 10 vegetable and fruit categories.
+- **Interactive UI**: Gorgeous glassmorphic card, drag-and-drop zone, and responsive layout matching premium design principles.
+- **Rich Nutritional Information**: Displays Calories, Carbs, Protein, Fiber, and Fat per 100g.
+- **Bilingual Support**: Toggle seamlessly between Vietnamese and English for all descriptions, benefits, and trivia.
+- **Probability Analysis**: Displays confidence score visual breakdown for alternative match predictions.
 
-Quick start
+---
 
-Create and activate a virtual environment, then install dependencies:
+## 🛠️ Supported Produce Categories
+The system supports the classification of the following 10 vegetables and fruits:
+`Asparagus (Măng tây)`, `Banana (Chuối)`, `Broccoli (Súp lơ xanh)`, `Carrot (Cà rốt)`, `Corn (Ngô/Bắp)`, `Eggplant (Cà tím)`, `Orange (Cam)`, `Pineapple (Dứa/Thơm)`, `Potato (Khoai tây)`, `Tomato (Cà chua)`.
 
+---
+
+## 🚀 How to Run the Project (Hướng Dẫn Chạy Dự Án)
+
+Để ứng dụng hoạt động đầy đủ, bạn cần chạy song song cả **Flask API Backend (Cổng 5000)** và **Next.js Frontend (Cổng 3000)**. Hãy mở **2 cửa sổ Terminal độc lập** để chạy từng phần:
+
+### 1. Khởi động Flask API Backend (Cổng 5000)
+
+**Cửa sổ Terminal 1:**
 ```bash
-python -m venv env
-env\Scripts\activate   # Windows
+# 1. Di chuyển vào thư mục gốc của dự án (nếu chưa có sẵn)
+cd vegetable-classification-system
+
+# 2. Kích hoạt môi trường ảo Python Virtual Environment
+env\Scripts\activate
+
+# 3. Cài đặt các gói thư viện cần thiết (nếu có cập nhật mới)
 pip install -r requirements.txt
-```
 
-Run the app:
-
-```bash
+# 4. Khởi động Flask API Backend
 python app.py
-# Then open http://127.0.0.1:5000 in your browser
 ```
+*Sau khi chạy thành công, Backend sẽ hoạt động tại địa chỉ: `http://localhost:5000` và tải sẵn mô hình Keras.*
 
-Usage
+---
 
-- Open the web UI at `http://127.0.0.1:5000`
-- Upload an image of a vegetable or fruit
-- The app returns a predicted label with confidence score
+### 2. Khởi động Next.js Frontend (Cổng 3000)
 
-Training / Adding models
+**Cửa sổ Terminal 2:**
+```bash
+# 1. Di chuyển vào thư mục frontend chứa mã nguồn giao diện
+cd frontend
 
-The `models/` directory is intended to store trained models. To train a new model:
+# 2. Khởi động chế độ phát triển (Development Mode) của Next.js
+npm run dev
+```
+*Sau khi chạy thành công, giao diện ứng dụng sẽ hoạt động tại địa chỉ: `http://localhost:3000`.*
 
-1. Prepare a dataset organized by class folders, e.g. `data/train/<class_name>/*.jpg` and `data/val/<class_name>/*.jpg`.
-2. Implement a training script (e.g. `train.py`) or adapt utilities in `utils/`.
-3. Save the trained model or weights into `models/` and update model-loading code in `app.py`.
+---
 
-Project structure
+## 💻 Tech Stack Detail
 
-- `app.py` — Flask application entry point
-- `models/` — trained model files
-- `notebooks/` — experimentation notebooks (data exploration, preprocessing)
-- `static/`, `templates/` — web assets and HTML templates
-- `utils/` — helper functions (preprocessing, label mapping, etc.)
-- `requirements.txt` — Python dependencies
+### Backend
+- **Python 3.10+**
+- **TensorFlow 2.17+** (Inference with Keras ResNet50 model)
+- **Flask & Flask-CORS** (RESTful API endpoints)
+- **Pillow** (Image preprocessing)
 
-Requirements
+### Frontend
+- **Next.js 15+ (App Router)**
+- **React 19**
+- **Vanilla CSS** (Custom premium glassmorphism styling)
+- **Lucide React** (Vector icons)
 
-- Python 3.8 or newer
-- (Optional) GPU for faster training
+---
 
-Operational notes
-
-- Always activate the virtual environment before installing or running
-
-© Vegetable Classification System
+© 2026 VeggieVision AI. Cultivating culinary knowledge.
