@@ -17,3 +17,6 @@ venv/
 
 # Logs
 *.log
+
+# Deep Learning Models
+models/
